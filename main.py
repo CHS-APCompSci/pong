@@ -2,6 +2,7 @@ import pygame as pg
 import pygame_widgets as widgets
 
 import constants as k
+from mysprites import Ball
 
 # INITIALIZE THINGS
 pg.init()
@@ -10,6 +11,16 @@ my_screen.fill(k.BACKGROUNDCOLOR)
 clock = pg.time.Clock()
 
 running = True
+
+# ADD SPRITES TO GROUPS
+ballgroup = pg.sprite.RenderUpdates()
+Ball.containers = ballgroup
+
+# SPRITES
+myball = Ball()
+
+
+
 
 #LOOP
 while running:
@@ -24,6 +35,7 @@ while running:
 
     # redraws all the stuff
     pg.display.update()
+    ballgroup.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
 
