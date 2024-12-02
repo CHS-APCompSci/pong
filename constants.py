@@ -5,5 +5,5 @@ SCREENSIZE = (400,400)
 BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
 
-
+maggie = 0
 
