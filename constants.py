@@ -6,7 +6,19 @@ BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
 
 
+
 maggie = 0
+=======
+Ael = 1
+
+
+gabby=0
+
+miguel = 5
+
+
+josh = 0
+
 
 logan = 0
 
