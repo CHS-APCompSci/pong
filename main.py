@@ -9,7 +9,6 @@ pg.init()
 my_screen = pg.display.set_mode(k.SCREENSIZE)
 my_screen.fill(k.BACKGROUNDCOLOR)
 clock = pg.time.Clock()
-
 running = True
 
 # ADD SPRITES TO GROUPS
@@ -33,9 +32,13 @@ while running:
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
 
-    # redraws all the stuff
-    pg.display.update()
+    # update position of all sprites in ball group
     ballgroup.update()
+
+    # redraws all the sprites in ballgroup
+    dirty = ballgroup.draw(my_screen)
+    # switches to the update display
+    pg.display.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
 

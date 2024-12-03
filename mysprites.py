@@ -50,6 +50,10 @@ class Ball(sp.Sprite):
         if self.rect.top < 0 or self.rect.bottom > k.SCREENHIGH:
             self.y = -self.y
             self.speed = (self.x, self.y)
+        # with no paddles
+        if self.rect.left < 0 or self.rect.right > k.SCREENWIDE:
+            self.x = -self.x
+            self.speed = (self.x, self.y)
 
 
 
