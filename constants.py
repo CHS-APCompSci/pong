@@ -1,27 +1,27 @@
 import pygame as pg
-from pygame.cursors import sizer_x_strings
 
 # MISC
-SCREENSIZE = (400,400)
+SCREENSIZE = screenwidth, screenheight = (400,400)
 BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
 
 # BUTTONS
+    # quit
 x = 5
 y = 5
 width = 70
 height =20
 QUITRECT = pg.Rect(x,y,width,height)
-
-nx = 280
+    # new game
 ny = 5
 nwidth = 110
+nx = screenwidth - nwidth
 nheight = 20
 NEWGAMERECT = pg.Rect(nx,ny,nwidth, nheight)
-
-sx = 100
+    # score
 sy = 5
 swidth = 100
+sx = screenwidth/2 - swidth/2
 sheight = 20
 SCORERECT = pg.Rect(sx,sy,swidth,sheight)
 

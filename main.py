@@ -1,5 +1,3 @@
-from lib2to3.fixer_util import String
-
 import pygame as pg
 import pygame_widgets
 from pygame_widgets.button import Button
@@ -13,6 +11,8 @@ my_screen.fill(k.BACKGROUNDCOLOR)
 clock = pg.time.Clock()
 
 running = True
+left_score = 0
+right_score = 0
 
 # COMMANDS
 def my_quit():
@@ -20,12 +20,13 @@ def my_quit():
     running = False
 
 def new_game():
-    pass
+    score_button.setText(text_score(0,1))
 
-left_score = 0
-right_score = 0
 def text_score(dleft=0, dright=0):
-    my_text = str(left_score + dleft) + " :: " + str(right_score+dright)
+    global left_score, right_score
+    left_score = left_score + dleft
+    right_score = right_score + dright
+    my_text = str(left_score) + " :: " + str(right_score)
     return my_text
 
 # BUTTONS
@@ -33,10 +34,9 @@ my_quit_button = Button(my_screen, k.QUITRECT.x, k.QUITRECT.y, k.QUITRECT.width,
             text = "Quit", radius = 5, hoverColour = "red", onClick = my_quit)
 new_game_button = Button(my_screen,k.NEWGAMERECT.x,k.NEWGAMERECT.y,k.NEWGAMERECT.width,k.NEWGAMERECT.height,
             text = "New Game", radius = 5, onClick = new_game)
-
 score_button = Button(my_screen,k.SCORERECT.x,k.SCORERECT.y,k.SCORERECT.width,k.SCORERECT.height,
-            text = text_score(),radius=5, colour=k.BACKGROUNDCOLOR, hoverColour=k.BACKGROUNDCOLOR, pressedColour=k.BACKGROUNDCOLOR)
-
+            text = text_score(),radius=5, colour=k.BACKGROUNDCOLOR, hoverColour=k.BACKGROUNDCOLOR,
+            pressedColour=k.BACKGROUNDCOLOR)
 
 #LOOP
 while running:
