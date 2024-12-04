@@ -1,6 +1,6 @@
 import pygame as pg
 import pygame_widgets as widgets
-
+from pygame_widgets.button import Button
 import constants as k
 
 # INITIALIZE THINGS
@@ -10,6 +10,20 @@ my_screen.fill(k.BACKGROUNDCOLOR)
 clock = pg.time.Clock()
 
 running = True
+
+#Commands
+def restart_game():
+    pass
+
+
+
+
+#Buttons
+restart_button = Button(my_screen,10,10,70,20,text="Restart", onclick= restart_game)
+
+
+
+
 
 #LOOP
 while running:
@@ -26,6 +40,6 @@ while running:
     pg.display.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
-
+import
 #QUIT
 pg.quit()
