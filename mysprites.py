@@ -42,7 +42,6 @@ class Ball(sp.Sprite):
         self.rect.x = self.centerx
         self.rect.y = self.centery
         self.image.fill(k.BALLCOLOR)
-        #self.image.set_colorkey(k.BALLCOLOR)
         pg.draw.circle(self.image,k.BALLCOLOR,(self.centerx,self.centery),self.radius)
 
     def update(self, *args, **kwargs):
