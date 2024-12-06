@@ -4,5 +4,6 @@ import pygame as pg
 SCREENSIZE = (800,400)
 BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
-
+OFFSET = 10
+PADDLEWIDTH = 12
 
