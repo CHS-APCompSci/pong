@@ -4,7 +4,7 @@ from pygame_widgets.button import Button
 
 
 import constants as k
-
+from mypaddles import Paddles
 from mysprites import Ball
 
 # INITIALIZE THINGS
@@ -44,46 +44,16 @@ score_button = Button(my_screen,k.SCORERECT.x,k.SCORERECT.y,k.SCORERECT.width,k.
             text = text_score(),radius=5, colour=k.BACKGROUNDCOLOR, hoverColour=k.BACKGROUNDCOLOR,
             pressedColour=k.BACKGROUNDCOLOR, onClick=score_click)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ADD SPRITES TO GROUPS
 ballgroup = pg.sprite.RenderUpdates()
 Ball.containers = ballgroup
+paddlegroup = pg.sprite.RenderUpdates()
+Paddles.containers = paddlegroup
 
 # SPRITES
 myball = Ball()
-
-
-
+myrightpaddle = Paddles("right")
+myleftpaddle = Paddles("left")
 
 #LOOP
 while running:
@@ -96,16 +66,16 @@ while running:
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
 
-    # redraws all the stuff
-
-    # update position of all sprites in ball group
+    # update position of all sprites by groups
     ballgroup.update()
+    paddlegroup.update()
 
     pygame_widgets.update(event)
-    # redraws all the sprites in ballgroup
+    # redraws all the sprites in groups
     dirty = ballgroup.draw(my_screen)
-    # switches to the update display
+    dirty = paddlegroup.draw(my_screen)
 
+    # switches to the update display
     pg.display.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
