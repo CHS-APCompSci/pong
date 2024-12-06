@@ -22,6 +22,9 @@ def my_quit():
 def new_game():
     score_button.setText(text_score(0,1))
 
+def score_click():
+    score_button.setText(text_score(1,0))
+
 def text_score(dleft=0, dright=0):
     global left_score, right_score
     left_score = left_score + dleft
@@ -36,7 +39,7 @@ new_game_button = Button(my_screen,k.NEWGAMERECT.x,k.NEWGAMERECT.y,k.NEWGAMERECT
             text = "New Game", radius = 5, onClick = new_game)
 score_button = Button(my_screen,k.SCORERECT.x,k.SCORERECT.y,k.SCORERECT.width,k.SCORERECT.height,
             text = text_score(),radius=5, colour=k.BACKGROUNDCOLOR, hoverColour=k.BACKGROUNDCOLOR,
-            pressedColour=k.BACKGROUNDCOLOR)
+            pressedColour=k.BACKGROUNDCOLOR, onClick=score_click)
 
 #LOOP
 while running:
