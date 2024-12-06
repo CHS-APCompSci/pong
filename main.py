@@ -35,11 +35,10 @@ while running:
     # redrwaw the background
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
-
+    widgets.update(event)
     # redraws all the stuff
     pg.display.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
-import
 #QUIT
 pg.quit()
