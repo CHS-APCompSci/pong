@@ -17,8 +17,8 @@ class Paddles (sp.Sprite):
         # Ball will interact with all members of the container
         sp.Sprite.__init__(self, self.containers)
         # create a surface to use for the image
-        self.paddle = pg.Surface((k.PADDLETHICK, k.PADDLELENGTH))  # , pg.SRCALPHA)
-        if (side == "left" or side == "LEFT" or side == "Left"):
+        self.paddle = pg.Surface((k.PADDLETHICK, k.PADDLELENGTH), pg.SRCALPHA)
+        if side == "left" or side == "LEFT" or side == "Left":
             self.centerx = k.PADDLEOFFSET
             self.color = k.PADDLECOLORLEFT
         else:
