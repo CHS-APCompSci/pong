@@ -48,7 +48,7 @@ while running:
         if event.type == pg.QUIT:
             running = False
 
-    # redrwaw the background
+    # redraw the background
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
 
