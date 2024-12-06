@@ -2,8 +2,21 @@ import pygame as pg
 
 # MISC
 SCREENSIZE = screenwidth, screenheight = (400,400)
+SCREENSIZE = SCREENWIDE, SCREENHIGH = (400,400)
 BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
+
+
+
+# BALL
+BALLSPEED = BALLSPX, BALLSPY = (8,8)
+BALLDIAM = 12
+BALLCOLOR = "red"
+
+
+
+
+
 
 # BUTTONS
     # quit

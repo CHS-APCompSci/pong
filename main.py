@@ -5,6 +5,8 @@ from pygame_widgets.button import Button
 
 import constants as k
 
+from mysprites import Ball
+
 # INITIALIZE THINGS
 pg.init()
 my_screen = pg.display.set_mode(k.SCREENSIZE)
@@ -42,6 +44,47 @@ score_button = Button(my_screen,k.SCORERECT.x,k.SCORERECT.y,k.SCORERECT.width,k.
             text = text_score(),radius=5, colour=k.BACKGROUNDCOLOR, hoverColour=k.BACKGROUNDCOLOR,
             pressedColour=k.BACKGROUNDCOLOR, onClick=score_click)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ADD SPRITES TO GROUPS
+ballgroup = pg.sprite.RenderUpdates()
+Ball.containers = ballgroup
+
+# SPRITES
+myball = Ball()
+
+
+
+
 #LOOP
 while running:
     # boilerplate code for closing the window
@@ -49,12 +92,20 @@ while running:
         if event.type == pg.QUIT:
             running = False
 
-    # redraw the background
+    # redrwaw the background
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
 
     # redraws all the stuff
+
+    # update position of all sprites in ball group
+    ballgroup.update()
+
     pygame_widgets.update(event)
+    # redraws all the sprites in ballgroup
+    dirty = ballgroup.draw(my_screen)
+    # switches to the update display
+
     pg.display.update()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
