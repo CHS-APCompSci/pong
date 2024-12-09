@@ -4,6 +4,7 @@ from pygame import sprite as sp
 
 # CLASSES
 
+# use your own names for this
 class Things (sp.Sprite):
 
     def __init__(self):
@@ -15,7 +16,7 @@ class Things (sp.Sprite):
         # draw the thing correctly, using rect if drawing a rectangle
         # and circle if drawing a circle
         pygame.draw.rect(self.image, "red",pygame.Rect(0,0,10,100))
-        # put ths size of the image into rect
+        # put the size of the image into rect
         self.rect = self.image.get_rect()
         # set the starting point (x,y) for the thing
         self.rect.x = 50

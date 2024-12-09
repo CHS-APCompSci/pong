@@ -1,3 +1,11 @@
+# Very basic rectangle sprite
+# look only at the c0mments
+# everything else is already in "school"
+
+
+
+
+
 import pygame as pg
 import pygame.sprite
 import pygame_widgets as widgets
@@ -11,8 +19,10 @@ clock = pg.time.Clock()
 running = True
 
 # MAKE THE SPRITE
+# use your own names
 mything = sprite_thing.Things()
 # MAKE A SPRITE GROUP
+# using your own names
 myspritegroup = pygame.sprite.Group()
 # ADD SPRITE TO SPRITE GROUP
 myspritegroup.add(mything)
