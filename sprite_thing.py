@@ -7,10 +7,19 @@ from pygame import sprite as sp
 class Things (sp.Sprite):
 
     def __init__(self):
+        # run original sprite setup instructions
         super().__init__()
-        self.image = pygame.Surface((10,100))
-        pygame.draw.rect(self.image, "red",pygame.Rect(100,100,10,100),width=0)
-        self.rect = self.image
+        # make a surface the right size for your sprite
+        # as a rectangle - even if it ends up as a ball
+        self.image = pygame.Surface([10,100])
+        # draw the thing correctly, using rect if drawing a rectangle
+        # and circle if drawing a circle
+        pygame.draw.rect(self.image, "red",pygame.Rect(0,0,10,100))
+        # put ths size of the image into rect
+        self.rect = self.image.get_rect()
+        # set the starting point (x,y) for the thing
+        self.rect.x = 50
+        self.rect.y = 50
 
     def update(self, *args, **kwargs):
         pass
