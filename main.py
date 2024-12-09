@@ -8,8 +8,7 @@ import pygame_widgets as widgets
 import constants as k
 pg.init()
 clock = pg.time.Clock()
-WIDTH, HEIGHT = 800, 600
-screen = pg.display.set_mode((WIDTH, HEIGHT))
+screen = pg.display.set_mode((k.WIDTH, k.HEIGHT))
 pg.display.set_caption("Pong Game")
 
 # Paddle settings
@@ -18,7 +17,7 @@ PADDLE_SPEED = 6
 
 # Left paddle initial position
 left_paddle_x = 50
-left_paddle_y = HEIGHT // 2 - PADDLE_HEIGHT // 2
+left_paddle_y = k.HEIGHT // 2 - PADDLE_HEIGHT // 2
 
 # Color settings
 WHITE = (255, 255, 255)
@@ -47,10 +46,10 @@ while running:
     # Key press handling for W (up) and S (down)
     keys = pg.key.get_pressed()
 
-    if keys[pg.K_w] and left_paddle_y > 0:
-        left_paddle_y -= PADDLE_SPEED  # Move up
-    if keys[pg.K_s] and left_paddle_y < HEIGHT - PADDLE_HEIGHT:
-        left_paddle_y += PADDLE_SPEED  # Move down
+    if keys[pg.K_w]:
+        mything.paddlemove(False)
+    if keys[pg.K_s]:
+        mything.paddlemove(True)
 
     # Draw the left paddle
     #pg.draw.rect(screen, WHITE, (left_paddle_x, left_paddle_y, PADDLE_WIDTH, PADDLE_HEIGHT))

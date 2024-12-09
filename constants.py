@@ -1,9 +1,10 @@
 import pygame as pg
 
 # MISC
-SCREENSIZE = (400,400)
+SCREENSIZE = WIDTH, HEIGHT = 800, 600
 BACKGROUNDCOLOR = "dark gray"
 FRAMERATE = 30
 
+paddlespeed = 5
 
 
