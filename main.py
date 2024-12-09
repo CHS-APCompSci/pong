@@ -21,7 +21,7 @@ def my_quit():
     
 #Buttons
 restart_button = Button(my_screen,10,10,70,20,text="Restart", onclick= restart_game)
-my_quit = mybutt.Button (my_screen,770,10,70,20,text="Quit",
+my_quit = mybutt.Button (my_screen,720,10,70,20,text="Quit",
                          radius = 5, onClick = my_quit)
 
 
