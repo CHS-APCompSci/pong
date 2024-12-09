@@ -29,3 +29,4 @@ class imagecutter:
                 image.blit(self.i_image, (0, 0), rect)
                 self.photobook.append(image)
 
+class
