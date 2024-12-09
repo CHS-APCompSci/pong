@@ -1,6 +1,7 @@
 import pygame as pg
 import pygame_widgets as widgets
 
+import sprite_thing
 import constants as k
 
 # INITIALIZE THINGS
@@ -10,6 +11,8 @@ my_screen.fill(k.BACKGROUNDCOLOR)
 clock = pg.time.Clock()
 
 running = True
+
+mything = sprite_thing.Things()
 
 #LOOP
 while running:
@@ -21,9 +24,9 @@ while running:
     # redrwaw the background
     # which clears the screen
     my_screen.fill(k.BACKGROUNDCOLOR)
-
+    mything.update()
     # redraws all the stuff
-    pg.display.update()
+    pg.display.flip()
     # set the frame rate
     dt = clock.tick(k.FRAMERATE)
 
