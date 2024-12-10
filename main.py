@@ -38,7 +38,7 @@ while running:
     # SPRITE MOTION
     keys = pg.key.get_pressed()
     if keys[pg.K_a]:
-        mything.rect.x = mything.rect.x + 2
+        mything.rect.x = mything.rect.x + 1
 
     my_screen.fill(k.BACKGROUNDCOLOR)
 
