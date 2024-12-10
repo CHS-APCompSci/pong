@@ -1,5 +1,5 @@
 # Very basic rectangle sprite
-# look only at the c0mments
+# look only at the comments
 # everything else is already in "school"
 
 
@@ -34,6 +34,12 @@ while running:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             running = False
+
+    # SPRITE MOTION
+    keys = pg.key.get_pressed()
+    if keys[pg.K_a]:
+        mything.rect.x = mything.rect.x + 2
+
     my_screen.fill(k.BACKGROUNDCOLOR)
 
     # DRAW THE GROUP OF SPRITES
