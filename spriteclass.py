@@ -15,6 +15,10 @@ class Paddles(sp.Sprite):
         self.rect.x = k.WIDTH - 50
         self.rect.y= k.HEIGHT // 2 - k.PADDLE_HEIGHT // 2
 
-    def move (self, ,):
-        pass
-
+    def paddlemove(self,updown):
+        if updown:
+            myspeed=(0,k.PADDLE_SPEED)
+        else:
+            myspeed=(0,-k.PADDLE_SPEED)
+        self.rect=self.rect.move(myspeed)
+        self.rect = self.rect.clamp(pg.Rect(0,0,k.WIDTH, k.HEIGHT))
