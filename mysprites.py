@@ -1,5 +1,6 @@
 import pygame
 from pygame import sprite as sp
+import constants as k
 
 # CLASSES
 
@@ -21,7 +22,13 @@ class Things (sp.Sprite):
         self.rect.x = 50
         self.rect.y = 50
 
-    def move(self, , 100):
-        pass
+    def paddlemove(self,updown):
+        if updown:
+            myspeed = (0, k.paddlespeed)
+        else:
+            myspeed = (0, -k.paddlespeed)
+        self.rect = self.rect.move(myspeed)
+        self.rect = self.rect.clamp(pygame.Rect(0, 0, k.WIDTH, k.HEIGHT))
+
 
 
