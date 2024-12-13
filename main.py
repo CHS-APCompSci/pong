@@ -53,7 +53,7 @@ while running:
             running = False
 
     # redraw the background
-    screen.fill(k.GREEN)w
+    screen.fill(k.GREEN)
 
     # redraws all the stuff
     pg.display.update()
