@@ -29,7 +29,7 @@ class Ball(sp.Sprite):
     # create a surface to use for the image
     ball = pg.Surface((k.BALLDIAM,k.BALLDIAM), pg.SRCALPHA)
 
-    def __init__(self):
+    def __init__(self,diam):
         super().__init__()
         # Ball will interact with all members of the container
         sp.Sprite.__init__(self,self.containers)
